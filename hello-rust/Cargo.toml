@@ -1,0 +1,14 @@
+[package]
+name = "hello-rust"
+version = "0.1.0"
+authors = ["nevermind"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ferris-says = "0.2"
+simple-server = "0.4.0"
+sqlx = { version = "0.5", features = [ "runtime-async-std-rustls", "mysql" ] }
+async-std = { version = "1.6", features = [ "attributes" ] }
+futures = "0.3"
