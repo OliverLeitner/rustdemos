@@ -87,6 +87,7 @@ fn read_cleaned_string(input: String) -> String {
     wheels: i8
 }*/
 
+#[allow(non_snake_case)]
 struct Customers {
     customerName: String,
 }
@@ -170,7 +171,7 @@ fn can_has_server(rows: Vec<Customers>) {
 
 use sqlx::mysql::MySqlPoolOptions;
 // etc.
-async fn get_all_customer_names() -> Result<(), sqlx::Error> {
+async fn get_all_customer_names() -> Result<Vec<Customers>, sqlx::Error> {
     // struct Customers { customerName: String };
     let pool = MySqlPoolOptions::new()
         .max_connections(5)
@@ -186,11 +187,12 @@ async fn get_all_customer_names() -> Result<(), sqlx::Error> {
         println!("{}", row.customerName)
     }*/
 
-    Ok(can_has_server(rows))
+    return Ok(rows);
 }
 
 #[async_std::main]
 async fn main() -> Result<(), sqlx::Error> {
-    get_all_customer_names().await;
-    Ok(())
+    // _ before the var name removes the need to out it
+    let _keeper: Vec<Customers> = get_all_customer_names().await.unwrap();
+    Ok(can_has_server(_keeper))
 }
