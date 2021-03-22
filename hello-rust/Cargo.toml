@@ -12,3 +12,4 @@ simple-server = "0.4.0"
 sqlx = { version = "0.5", features = [ "runtime-async-std-rustls", "mysql" ] }
 async-std = { version = "1.6", features = [ "attributes" ] }
 futures = "0.3"
+async-trait = "0.1.48"
