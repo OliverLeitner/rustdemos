@@ -44,15 +44,10 @@ impl MyServer for LocalServer {
                 }
             }
         });
-
+        println!("Server listens on {}:{}", host, port);
         server.listen(host, port);
     }
 }
-// extern crate env_logger;
-// #[macro_use]
-// extern crate log;
-// extern crate simple_server;
-// use simple_server::{Method, Server, StatusCode};
 
 #[allow(non_snake_case)]
 struct Customers {
@@ -86,8 +81,7 @@ impl MyDatabase for LocalDatabase {
         /*for row in rows {
             println!("{}", row.customerName)
         }*/
-
-        return Ok(rows);
+        return Ok(rows)
     }
 }
 
