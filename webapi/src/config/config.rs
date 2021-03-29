@@ -1,4 +1,4 @@
-use envfile::EnvFile;
+/*use envfile::EnvFile;
 use std::path::Path;
 
 pub trait IConfig {
@@ -12,4 +12,4 @@ impl IConfig for Config {
         let env = EnvFile::new(&Path::new("src/config/config.env")).unwrap();
         env.get(key).unwrap().to_string()
     }
-}
+}*/

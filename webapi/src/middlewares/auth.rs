@@ -1,4 +1,4 @@
-use crate::config::{Config, IConfig};
+/*use crate::config::{Config, IConfig};
 use crate::models::Claims;
 use actix_web::error::ErrorUnauthorized;
 use actix_web::{dev, Error, FromRequest, HttpRequest};
@@ -33,4 +33,4 @@ impl FromRequest for AuthorizationService {
             None => err(ErrorUnauthorized("blocked!")),
         }
     }
-}
+}*/
